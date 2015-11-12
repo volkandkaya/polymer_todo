@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_list_or_404
-import json
+from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+import json
 from .models import Todo
 
 
@@ -10,10 +10,9 @@ def todo_list(request):
         print(request.body)
         body = request.body.decode(encoding='UTF-8')
         body = json.loads(body)
-        print(body)
         Todo.objects.all().delete()
         for bod in body:
-           Todo.create_todo(bod)
+            Todo.create_todo(bod)
     else:
         todos = Todo.objects.all()
         return render(request, 'todo/todo_list.html', {'todos': todos})
