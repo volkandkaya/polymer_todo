@@ -1,0 +1,25 @@
+<link rel="import" href="http://www.polymer-project.org/1.0/samples/components/polymer/polymer.html">
+
+<dom-module id="to-do">
+
+  <template>
+
+    <style>
+      div {
+
+      }
+    </style>
+
+      <p><content></content></p>
+      <button class="btn btn-danger glyphicon glyphicon-remove" onclick="deleteelement(this.id)"></button>
+    <button class="btn btn-info glyphicon glyphicon-edit" onclick="editelement(this.id)"></button>
+  <hr>
+  </template>
+
+  <script>
+    Polymer({
+      is: "to-do",
+    });
+  </script>
+
+</dom-module>
